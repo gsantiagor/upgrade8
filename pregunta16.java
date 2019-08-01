@@ -16,6 +16,6 @@ public class pregunta16 {
         ejg.substring(0, 2);
         System.out.println(ejg);
         
-        //game
+        //Salida es: game
     }
 }
