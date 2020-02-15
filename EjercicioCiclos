@@ -1,0 +1,159 @@
+WHILE
+Escribir un programa que solicite ingresar 10 notas de alumnos y nos informe cuántos tienen notas mayores o iguales a 7 y cuántos menores.
+
+public class EstructuraRepetitivaWhile5 {
+    public static void main(String[] ar) {
+        Scanner teclado=new Scanner(System.in);
+        int x,nota,conta1,conta2;
+        x=1;
+        conta1=0;
+        conta2=0;
+        while (x<=10) {
+            System.out.print("Ingrese nota:");
+            nota=teclado.nextInt();
+            if (nota>=7) {
+                conta1=conta1 + 1;
+            }else {
+                conta2=conta2 + 1;
+            }
+            x=x + 1;
+        }
+        System.out.print("Cantidad de alumnos con notas mayores o iguales a 7:");
+        System.out.println(conta1);
+        System.out.print("Cantidad de alumons con notas menores a 7:");
+        System.out.print(conta2);
+    }
+}
+
+Realizar un programa que imprima 25 términos de la serie 11 - 22 - 33 - 44, etc.
+public class EstructuraRepetitivaWhile8 {
+    public static void main(String[] ar) {
+        int x,termino;
+        x=1;
+        termino=11;
+        while (x<=25) {
+            System.out.print(termino);
+            System.out.print(" - ");
+            x=x + 1;
+            termino=termino +11;
+        }
+    }
+}
+
+
+DO WHILE
+Realizar un programa que acumule (sume) valores ingresados por teclado hasta ingresar el 9999 (no sumar dicho valor, indica que ha finalizado la carga). 
+Imprimir el valor acumulado e informar si dicho valor es cero, mayor a cero o menor a cero.
+
+import java.util.Scanner;
+
+public class EstructuraRepetitivaDoWhile4 {
+    public static void main(String[] ar) {
+        Scanner teclado=new Scanner(System.in);
+        int suma,valor;
+        suma=0;
+        do {
+            System.out.print("Ingrese un valor:");
+            valor=teclado.nextInt();
+            if (valor!=9999) {
+                suma=suma+valor;
+            }
+        }while (valor!=9999);
+        System.out.print("El valor acumulado es ");
+        System.out.println(suma);
+        if (suma==0) {
+            System.out.println("El valor acumulado es cero.");
+        } else {
+            if (suma>0) {
+                System.out.println("El valor acumulado es positivo.");
+            } else {
+                System.out.println("El valor acumulado es negativo");
+            }
+        }
+    }
+}
+
+FOR
+
+Confeccionar un programa que permita ingresar un valor del 1 al 10 y nos muestre la tabla de multiplicar del mismo (los primeros 12 términos)
+Ejemplo: Si ingreso 3 deberá aparecer en pantalla los valores 3, 6, 9, hasta el 36.
+
+public class EstructuraRepetitivaFor8 {
+    public static void main(String[] ar) {
+        Scanner teclado=new Scanner(System.in);
+        int f,valor;
+        System.out.print("Ingrese un valor entre 1 y 10:");
+        valor=teclado.nextInt();
+        for(f=valor;f<=valor*12;f=f+valor) {
+            System.out.print(f);
+            System.out.print("-");
+        }
+    }
+}
+
+
+Crear una matriz de n * m filas (cargar n y m por teclado) 
+Imprimir los valores 
+
+
+int notas{10,9,5,2};
+public void ordenar() {
+        for(int k=0;k<notas.length;k++) {
+            for(int f=0;f<notas.length-1-k;f++) {
+                if (notas[f]<notas[f+1]) {
+                    int auxnota;
+                    auxnota=notas[f];
+                    notas[f]=notas[f+1];
+                    notas[f+1]=auxnota;
+                    
+                }
+            }
+        }
+    }
+
+
+-----------------------------------------------------------------------
+
+CICLOS ANIDADOS
+int[][] edades = {{18,10,22,32},{31,25,22,11},{54,34,12,72}};
+for(int[] arreglo : edades) {
+for(int i=0; i<arreglo.length; i++) {
+System.out.print(arreglo[i]+"\t");
+}
+System.out.println();
+}
+
+
+
+
+ETIQUETAS
+PRIMER_FOR : for (int i = 1; i < 4; i++) {
+System.out.println(i + " " + "i");
+SEGUNDO_FOR : for (int j = 1; j < 5; j++) {
+j++;
+System.out.println(j + " " + "j");
+}
+}
+
+
+BREAK
+int [][] edades = {{15,20,18},{24,56,18}};
+PRIMER_CICLO: for (int [] arreglo : edades) {
+SEGUNDO_CICLO: for (int i = 0; i <arreglo.length; i++) {
+if (arreglo[i] == 18) {
+System.out.println(arreglo[i]);
+break PRIMER_CICLO;
+}
+}
+}
+
+CONTINUE
+int [][] edades = {{15,20,18},{24,56,18}};
+PRIMER_CICLO: for (int [] arreglo : edades) {
+SEGUNDO_CICLO: for (int i = 0; i <arreglo.length; i++) {
+if (arreglo[i] == 18) {
+System.out.println(arreglo[i]);
+continue PRIMER_CICLO;
+}
+}
+}
